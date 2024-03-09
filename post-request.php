@@ -21,6 +21,7 @@ $jsonx = $jx->toJSONx([
 // Send POST request
 $curl = curl_init('');
 curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonx);
+curl_setopt($curl, CURLOPT_HTTPHEADER, ['Content-Type: application/xml']);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
 $curlResponse = curl_exec($curl);
